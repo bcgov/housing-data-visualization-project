@@ -6,17 +6,21 @@
 
 # Housing Data: BCIC Innovation Exchange™ Public Service Challenge for BC Stats
 
-Description
+### Problem statement 
 
-### Usage
+### Background
 
-#### Data
+#### Data sets
 
-The data for the project is publically available from (list sources)
+The data for the project is publically available from _(list sources)_
+
+
+#### Minimum Viable Project
 
 
 #### Code
 
+---
 
 ### Getting Help or Reporting an Issue
 
