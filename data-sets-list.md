@@ -15,7 +15,7 @@
 
 - [DataBC Catalogue](https://catalogue.data.gov.bc.ca/dataset?download_audience=Public)
 
-- [Property Transfer Tax data](_to be added when it becomes available_)
+- [Property Transfer Tax data] (_to be added when it becomes available_)
 
 #### Statistics Canada
 
