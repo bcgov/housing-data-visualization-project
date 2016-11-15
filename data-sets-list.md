@@ -17,6 +17,10 @@
 
 - [Property Transfer Tax data] (_to be added when it becomes available_)
 
+#### City of Vancouver 
+
+- [City of Vancouver Open Data catalogue](http://vancouver.ca/your-government/open-data-catalogue.aspx)
+
 #### Statistics Canada
 
 - [National Household Survey 2011: Income and Housing](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
