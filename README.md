@@ -12,10 +12,13 @@
 
 #### Data sets
 
-The data for the project is publically available from _(list sources)_
-
+The data for the project is publically available from a variety of sources, including DataBC's catalogue, BC Stats, and Statistics Canada (including the Census). See the [listing of specific data sets](data-sets-list.md) for details.
 
 #### Minimum Viable Project
+
+_{summary to be appended from BCIC document}_
+
+_{add specific details, requirements and suggestions, e.g. must follow Census geography}_
 
 
 #### Code
