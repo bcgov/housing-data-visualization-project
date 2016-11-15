@@ -14,6 +14,14 @@
 
 The data for the project is publically available from a variety of sources, including DataBC's catalogue, BC Stats, and Statistics Canada (including the Census). See the [listing of specific data sets](data-sets-list.md) for details.
 
+#### Examples / Inspiration
+
+These are included as examples of the type of visualizations that might be suitable for the British Columbia housing data.
+
+- [Locating neighborhood diversity in the American metropolis](https://walkerke.shinyapps.io/neighborhood_diversity/) {created using the open source statistical software R}
+
+- [Invest in the Future of Baltimore](http://files.zillowstatic.com/research/public/Whitehouse_Hackathon/index.html) {platform and data are not shared}
+
 #### Minimum Viable Project
 
 _{summary to be appended from BCIC document}_
