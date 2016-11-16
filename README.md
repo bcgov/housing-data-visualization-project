@@ -18,7 +18,7 @@ The data for the project is publically available from a variety of sources, incl
 
 These are included as examples of the type of visualizations that might be suitable for the British Columbia housing data.
 
-- [Is $2 million the New $1 million?](http://www.btaworks.com/2016/01/28/is-2-million-the-new-1-million/) {most recent blog post from [BTAworks](http://www.btaworks.com/) in Vancouver; uses open data from the City of Vancouver; software unknown}
+- [Is $2 million the New $1 million?](http://www.btaworks.com/2016/01/28/is-2-million-the-new-1-million/) {blog post from [BTAworks](http://www.btaworks.com/) in Vancouver; uses open data from the City of Vancouver; software unknown}
 
 - [Locating neighborhood diversity in the American metropolis](https://walkerke.shinyapps.io/neighborhood_diversity/) {created using the open source statistical software R}
 
