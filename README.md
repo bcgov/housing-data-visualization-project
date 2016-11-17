@@ -6,13 +6,29 @@
 
 # Housing Data: BCIC Innovation Exchange™ Public Service Challenge for BC Stats
 
+The Province of British Columbia and other agencies collect a wealth of administrative data that relates to housing, including the market for housing, as a consequence of their regulatory and administrative authorities. These include data about legal ownership (Land Titles BC), the total stock of housing (BC Assessment), and taxation information (Ministry of Finance). In addition, socio-demographic information is available, such as ownership status (owner or renter), through the Census of Canada.
+
+The British Columbia Government seeks to develop statistics that will provide greater certainty about the state of housing in the province, including the role of foreign ownership, real estate as an investment or business strategy (rather than home ownership), and insights into the regional impact of these issues.
+
+As one example, starting on 2016-06-10 the [Property Transfer Tax](http://www2.gov.bc.ca/gov/content/taxes/property-taxes/property-transfer-tax) form began collecting information about the citizenship and residency status of purchasers. This data is the source of the widely reported information about foreign ownership of residential properties; see for example this [news release from the Ministry of Finance](https://news.gov.bc.ca/releases/2016FIN0034-001354). While there is much value in these data, the data are about transactions of a very small proportion of properties in B.C., and do not reflect the ownership of the total housing stock in British Columbia. By linking the foreign transaction data to the housing stock data, it would be possible to estimate the share of the B.C. housing stock that is owned by non-Canadians. It would also indicate the proportion of properties that are changing hands multiple times over short periods (potentially an indicator of investment, rather than residential, activity).
+
+
 ### Problem statement 
 
+"In this challenge, participants will develop and submit an engaging on-line visualization platform of B.C. housing
+market information, using the following types of data: population data, property assessments, property transfer tax
+records, home owner grant records, land title records, etc. The platform will enable government, infrastructure
+planners and the wider public to interact with, understand and make decisions based on community growth and
+housing data." (BC Innovation Council)
+
+
 ### Background
+
 
 #### Data sets
 
 The data for the project is publically available from a variety of sources, including DataBC's catalogue, BC Stats, and Statistics Canada (including the Census). See the [listing of specific data sets](data-sets-list.md) for details.
+
 
 #### Examples / Inspiration
 
