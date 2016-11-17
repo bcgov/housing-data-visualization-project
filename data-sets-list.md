@@ -2,6 +2,8 @@
 
 ## Suggested data for visualization
 
+The data below are by no means intended to be a comprehensive list of data that are relevant to answering the research questions posed, but are viewed to be necessary to understanding.
+
 ### Population & Socio-economic statistics
 
 #### BC Stats
