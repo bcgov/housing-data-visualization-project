@@ -46,3 +46,7 @@ The data below are by no means intended to be a comprehensive list of data that 
 #### DataBC catalogue
 
 - [ParcelMap BC Parcel Fabric](https://catalogue.data.gov.bc.ca/pt_BR/dataset/parcelmap-bc-parcel-fabric)
+
+   - [ParcelMap BC at BC Land Titles & Survey Authority](https://ltsa.ca/online-services/parcelmap-bc)
+
+   - [parcelMap BC at International Cadastral Information Society (ICIS)](http://www.icisociety.ca/parcelmap-bc/parcelmap-bc/)
