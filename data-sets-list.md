@@ -43,9 +43,9 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 ### Geography
 
-#### DataBC catalogue
+#### ParcelMap BC
 
-- [ParcelMap BC Parcel Fabric](https://catalogue.data.gov.bc.ca/pt_BR/dataset/parcelmap-bc-parcel-fabric)
+- [ParcelMap BC Parcel Fabric](https://catalogue.data.gov.bc.ca/pt_BR/dataset/parcelmap-bc-parcel-fabric) at DataBC Catalogue
 
    - [ParcelMap BC at BC Land Titles & Survey Authority](https://ltsa.ca/online-services/parcelmap-bc)
 
