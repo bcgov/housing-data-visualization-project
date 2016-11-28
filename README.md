@@ -40,12 +40,6 @@ These are included as examples of the type of visualizations that might be suita
 
 - [Invest in the Future of Baltimore](http://files.zillowstatic.com/research/public/Whitehouse_Hackathon/index.html) {platform and data are not shared}
 
-#### Minimum Viable Project
-
-_{summary to be appended from BCIC document}_
-
-_{add specific details, requirements and suggestions, e.g. must follow Census geography}_
-
 
 #### Code
 
