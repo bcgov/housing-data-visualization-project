@@ -38,7 +38,9 @@ These are included as examples of the type of visualizations that might be suita
 
 - [Locating neighborhood diversity in the American metropolis](https://walkerke.shinyapps.io/neighborhood_diversity/) {created using the open source statistical software R}
 
-- [Invest in the Future of Baltimore](http://files.zillowstatic.com/research/public/Whitehouse_Hackathon/index.html) {platform and data are not shared}
+- [Invest in the Future of Baltimore](http://files.zillowstatic.com/research/public/Whitehouse_Hackathon/index.html) {information about platform and data are not shared}
+
+- [London’s Housing Market Is Slumping and Still Hugely Expensive](http://www.bloomberg.com/graphics/uk-property) {Bloomberg.com; Land Registry data from [Gov.UK open data site](https://www.gov.uk/guidance/about-the-price-paid-data); mapping code not shared}
 
 
 #### Code
