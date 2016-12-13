@@ -7,7 +7,7 @@
 # Housing Data: BCIC Innovation Exchange™ Public Service Challenge for BC Stats
 
 _This repo provides additional details about the BC Innovation Council's Data Visualization Tech Challenge.
-For more information, please see the BC Innovation Council's press release, ["$75,000 available to solve government’s needs for data visualization".]_(http://bcic.ca/news/blog/75000-available-solve-provincial-governments-data-visualization-challenges/)
+For more information, please see the BC Innovation Council's press release, ["$75,000 available to solve government’s needs for data visualization".](http://bcic.ca/news/blog/75000-available-solve-provincial-governments-data-visualization-challenges/)_
 
 The Province of British Columbia and other agencies collect a wealth of administrative data that relates to housing, including the market for housing, as a consequence of their regulatory and administrative authorities. These include data about legal ownership (Land Titles BC), the total stock of housing (BC Assessment), and taxation information (Ministry of Finance). In addition, socio-demographic information is available, such as ownership status (owner or renter), through the Census of Canada.
 
