@@ -44,9 +44,11 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - [Tables by subject: Residential construction](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/ind01/l3_2162_2166-eng.htm?hili_cpis04)
 
-   - [New Housing Price Index (NHPI)](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/manuf12-eng.htm)
+   - [Building permits, values by activity sector](http://www5.statcan.gc.ca/cansim/a26?lang=eng&retrLang=eng&id=0260003&&pattern=&stByVal=1&p1=1&p2=37&tabMode=dataTable&csid=)
    
    - [Housing starts, by province](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/manuf05-eng.htm)
+
+   - [New Housing Price Index (NHPI)](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/manuf12-eng.htm)
 
 
 ### Geography
