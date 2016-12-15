@@ -17,7 +17,7 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - [DataBC Catalogue](https://catalogue.data.gov.bc.ca/dataset?download_audience=Public)
 
-- [Property Transfer Tax data] (_to be added when it becomes available_)
+- [Property Transfer Tax data](https://catalogue.data.gov.bc.ca/dataset/property-transfer-tax-data)
 
 #### City of Vancouver 
 
