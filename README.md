@@ -53,7 +53,7 @@ These are included as examples of the type of visualizations that might be suita
 
 **Modeling, charts & tables**
 
-- [Gapminder (birth rate by GDP, over time)](https://www.gapminder.org/tools/#_state_marker_axis_slash__y_which=children_slash__per_slash__woman_slash__total_slash__fertility&domainMin:null&domainMax:null&zoomedMin:null&zoomedMax:null;;;&chart-type=bubbles)
+- [Gapminder (birth rate by GDP, over time)](http://www.gapminder.org/tools/#_chart-type=bubbles)
 
 - [Commuting to work](http://www12.statcan.gc.ca/nhs-enm/2011/as-sa/99-012-x/99-012-x2011003_1-eng.cfm)
 
