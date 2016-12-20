@@ -39,13 +39,26 @@ The data for the project is publically available from a variety of sources, incl
 
 These are included as examples of the type of visualizations that might be suitable for the British Columbia housing data.
 
-- [Is $2 million the New $1 million?](http://www.btaworks.com/2016/01/28/is-2-million-the-new-1-million/) {blog post from [BTAworks](http://www.btaworks.com/) in Vancouver; uses open data from the City of Vancouver; software unknown}
+**Mapping**
 
 - [Locating neighborhood diversity in the American metropolis](https://walkerke.shinyapps.io/neighborhood_diversity/) {created using the open source statistical software R with the Shiny package; code is available via [the project github repo](https://github.com/walkerke/neighborhood_diversity)}
+
+- [Is $2 million the New $1 million?](http://www.btaworks.com/2016/01/28/is-2-million-the-new-1-million/) {blog post from [BTAworks](http://www.btaworks.com/) in Vancouver; uses open data from the City of Vancouver; software unknown}
+
+- [Trick-or-Treat Onslaught](https://censusmapper.ca/maps/136) {uses data from Statistics Canada}
 
 - [Invest in the Future of Baltimore](http://files.zillowstatic.com/research/public/Whitehouse_Hackathon/index.html) {information about platform and data are not shared}
 
 - [London’s Housing Market Is Slumping and Still Hugely Expensive](http://www.bloomberg.com/graphics/uk-property) {Bloomberg.com; Land Registry data from [Gov.UK open data site](https://www.gov.uk/guidance/about-the-price-paid-data); mapping code not shared}
+
+**Modeling, charts & tables**
+
+- [Gapminder (birth rate by GDP, over time)](https://www.gapminder.org/tools/#_state_marker_axis_slash__y_which=children_slash__per_slash__woman_slash__total_slash__fertility&domainMin:null&domainMax:null&zoomedMin:null&zoomedMax:null;;;&chart-type=bubbles)
+
+- [Commuting to work](http://www12.statcan.gc.ca/nhs-enm/2011/as-sa/99-012-x/99-012-x2011003_1-eng.cfm)
+
+- [Health Indicators in Utah Counties](https://juliasilge.shinyapps.io/CountyHealthApp/)
+
 
 
 #### Code
