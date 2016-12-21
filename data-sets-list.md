@@ -23,6 +23,10 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - [City of Vancouver Open Data catalogue](http://vancouver.ca/your-government/open-data-catalogue.aspx)
 
+#### Teranet & National Bank of Canada
+
+- [Teranet - National Bank National Composite House Price Index ™](http://www.housepriceindex.ca/)
+
 #### TransLink
 
 - [SkyTrain: travel times between stations](http://www.translink.ca/site-info/document-library-result.aspx?id={0F4E7466-A7AB-4D17-8241-D9D01C23EE9A}|{72FCB85B-D728-4710-BF91-C4F8D308107E}|{B11A2FC3-956F-403F-8FCC-2F1F9D44EE1A}&ref={FFCD8EFA-A8B3-47FA-97D3-4523903C5195})
