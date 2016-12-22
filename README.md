@@ -57,7 +57,7 @@ These are included as examples of the type of visualizations that might be suita
 
 - [Commuting to work](http://www12.statcan.gc.ca/nhs-enm/2011/as-sa/99-012-x/99-012-x2011003_1-eng.cfm)
 
-- [Health Indicators in Utah Counties](https://juliasilge.shinyapps.io/CountyHealthApp/)
+- [Health Indicators in Utah Counties](https://juliasilge.shinyapps.io/CountyHealthApp/) (app) and [blog, including principle component analysis](http://juliasilge.com/blog/Health-Care-Indicators/)
 
 
 
