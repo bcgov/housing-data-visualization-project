@@ -57,6 +57,10 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 ### Geography
 
+#### Geography concordance
+
+- [geography-concordance.csv](housing-data-visualization-project/data/geography-concordance.csv). This file shows the relationship between municipalities, regional districts (including their varied names), the aggregation of regional districts using in the Property Transfer Tax aggregations, and development regions.
+
 #### ParcelMap BC
 
 - [ParcelMap BC Parcel Fabric](https://catalogue.data.gov.bc.ca/pt_BR/dataset/parcelmap-bc-parcel-fabric) at DataBC Catalogue
