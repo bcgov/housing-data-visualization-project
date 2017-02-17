@@ -33,6 +33,10 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 #### Statistics Canada
 
+- [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to data for the 2016, 2011, 2006, and 2001 Censuses. 
+
+- [2016 Census of Canada: Population and Dwelling Count Highlight Tables](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/comprehensive.cfm) -- of greatest relevance are the Census Tract and Census Subdivision tables.
+
 - [2011 Census of Canada: Topic-based tabulations](http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/tbt-tt/Index-eng.cfm)
 
 - [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Index-eng.cfm)
