@@ -49,6 +49,8 @@ The data below are by no means intended to be a comprehensive list of data that 
    
       - [Journey to Work Reference Guide](https://www12.statcan.gc.ca/nhs-enm/2011/ref/guides/99-012-x/99-012-x2011008-eng.cfm)
 
+  - [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm)
+
 - [Residential and Non-Residential Property Assessment Values](http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&Id=318595)
 
 - [Tables by subject: Residential construction](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/ind01/l3_2162_2166-eng.htm?hili_cpis04)
