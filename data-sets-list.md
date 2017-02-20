@@ -31,7 +31,7 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - [SkyTrain: travel times between stations](http://www.translink.ca/site-info/document-library-result.aspx?id={0F4E7466-A7AB-4D17-8241-D9D01C23EE9A}|{72FCB85B-D728-4710-BF91-C4F8D308107E}|{B11A2FC3-956F-403F-8FCC-2F1F9D44EE1A}&ref={FFCD8EFA-A8B3-47FA-97D3-4523903C5195})
 
-#### Statistics Canada
+#### Statistics Canada: Census and National Household Survey (NHS)
 
 - **{NEW}** [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to data for the 2016, 2011, 2006, and 2001 Censuses. 
 
@@ -50,6 +50,13 @@ The data below are by no means intended to be a comprehensive list of data that 
       - [Journey to Work Reference Guide](https://www12.statcan.gc.ca/nhs-enm/2011/ref/guides/99-012-x/99-012-x2011008-eng.cfm)
 
   - [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm)
+
+- [2011 Census - Dissemination Area comprehensive table](https://www12.statcan.gc.ca/census-recensement/2011/dp-pd/prof/details/download-telecharger/comprehensive/comp-csv-tab-dwnld-tlchrgr.cfm?Lang=E#tabs2011)
+
+- [2011 Census - Census Tract comprehensive table](https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/prof/details/download-telecharger/comprehensive/comp-csv-tab-nhs-enm.cfm?Lang=E)
+
+
+#### Statistics Canada: other data
 
 - [Residential and Non-Residential Property Assessment Values](http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&Id=318595)
 
