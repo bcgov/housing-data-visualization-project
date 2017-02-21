@@ -33,7 +33,9 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 #### Statistics Canada: Census and National Household Survey (NHS)
 
-- **{NEW}** [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to data for the 2016, 2011, 2006, and 2001 Censuses. 
+- **{NEW}** [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to the Geosuite tool for the 2016, 2011, 2006, and 2001 Censuses. 
+
+- **{NEW}** [Census Datasets](http://www12.statcan.gc.ca/datasets/Index-eng.cfm) This page has links to data tables for the 2016, 2011, 2006, and 2001 Censuses. It seems these tables replicate what's in the Geosuite tool above.
 
 - **{NEW}** [2016 Census of Canada: Population and Dwelling Count Highlight Tables](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/comprehensive.cfm) -- of greatest relevance are the Census Tract and Census Subdivision tables.
   - This report, about the population growth in the City of Toronto, has some good examples of visualizations of population change in that city's census tracts.  [Dahab Ibrahim,_Growth and Change in Toronto's Neighbourhoods_, Social Planning Toronto, February 2017](http://www.socialplanningtoronto.org/new_census_report_shows_toronto_faces_unprecedented_density_surge_leaving_city_struggling_to_keep_pace)
