@@ -43,6 +43,8 @@ These are included as examples of the type of visualizations that might be suita
 
 - **{NEW}** [Canadian Rental Housing Index](http://rentalhousingindex.ca/), driven by Census & National Household Survey data from Statistics Canada. Via the [BC Non-Profit Housing Association](http://bcnpha.ca/research/rental-housing-index/)
 
+- **{NEW}** [B.C. Paired Sales Analysis](https://public.tableau.com/profile/bcpairedsalesdata#!/vizhome/BCPairedSalesAnalysis-v12-2016-07-14/PairedSalesSummaryTable). 
+
 - [Locating neighborhood diversity in the American metropolis](https://walkerke.shinyapps.io/neighborhood_diversity/) {created using the open source statistical software R with the Shiny package; code is available via [the project github repo](https://github.com/walkerke/neighborhood_diversity)}
 
 - [Is $2 million the New $1 million?](http://www.btaworks.com/2016/01/28/is-2-million-the-new-1-million/) {blog post from [BTAworks](http://www.btaworks.com/) in Vancouver; uses open data from the City of Vancouver; software unknown}
