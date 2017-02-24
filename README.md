@@ -63,7 +63,7 @@ These are included as examples of the type of visualizations that might be suita
 
 - [Health Indicators in Utah Counties](https://juliasilge.shinyapps.io/CountyHealthApp/) (app) and [blog, including principle component analysis](http://juliasilge.com/blog/Health-Care-Indicators/)
 
-- **{NEW}** [House price appreciation by year, at zip code level](https://twitter.com/lenkiefer/status/834943798417440768) -- interesting use of violin plot (also known as beeswarm or column scatter plot) to show the distribution of the number of areas (by zip code) across the range of appreciation rates (the Y axis).
+- **{NEW}** [House price appreciation by year, at zip code level](https://twitter.com/lenkiefer/status/834943798417440768) -- interesting use of violin plot (also known as beeswarm or column scatter plot) to show the distribution of the number of areas (by zip code) across the range of appreciation rates (the Y axis). Data source: Federal Housing Finance Agency, [Working Paper 16-01: Local House Price Dynamics: New Indices and Stylized Facts](https://www.fhfa.gov/PolicyProgramsResearch/Research/Pages/wp1601.aspx)
 
 
 #### Code
