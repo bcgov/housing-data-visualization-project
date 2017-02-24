@@ -63,6 +63,7 @@ These are included as examples of the type of visualizations that might be suita
 
 - [Health Indicators in Utah Counties](https://juliasilge.shinyapps.io/CountyHealthApp/) (app) and [blog, including principle component analysis](http://juliasilge.com/blog/Health-Care-Indicators/)
 
+- **{NEW}** [House price appreciation by year, at zip code level](https://twitter.com/lenkiefer/status/834943798417440768) -- interesting use of violin plot to show the distribution of the number of areas (by zip code) across the range of appreciation rates (the Y axis).
 
 
 #### Code
