@@ -71,6 +71,12 @@ The data below are by no means intended to be a comprehensive list of data that 
    - [New Housing Price Index (NHPI)](http://www.statcan.gc.ca/tables-tableaux/sum-som/l01/cst01/manuf12-eng.htm)
 
 
+#### non-Canadian data sources
+
+- Federal Housing Finance Agency (U.S.A.), [Working Paper 16-01: Local House Price Dynamics: New Indices and Stylized Facts](https://www.fhfa.gov/PolicyProgramsResearch/Research/Pages/wp1601.aspx)
+
+---
+
 ### Geography
 
 #### Geography concordance
