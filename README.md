@@ -34,6 +34,7 @@ housing data." (BC Innovation Council)
 
 The data for the project is publically available from a variety of sources, including DataBC's catalogue, BC Stats, and Statistics Canada (including the Census). See the [listing of specific data sets](data-sets-list.md) for details.
 
+Data sourced from Statistics Canada and saved in this repository is covered under the [Statistics Canada Open Licence Agreement](http://www.statcan.gc.ca/eng/reference/licence).
 
 #### Examples / Inspiration
 
@@ -104,4 +105,8 @@ Please note that this project is released with a [Contributor Code of Conduct](C
     See the License for the specific language governing permissions and
     limitations under the License.
     
+Where specified, data housed in this repository is is covered under the [Statistics Canada Open Licence Agreement](http://www.statcan.gc.ca/eng/reference/licence).
+
+Details about individual data files are specified in the R, RMD, and MD files that reference them.
+
 This repository is maintained by [BC Stats](bcstats.gov.bc.ca). Click [here](https://github.com/bcgov/BCStats) for a complete list of our repositories on GitHub.
