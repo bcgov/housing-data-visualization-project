@@ -42,12 +42,12 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - [2011 Census of Canada: Topic-based tabulations](http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/tbt-tt/Index-eng.cfm)
 
-- [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Index-eng.cfm)
-
 - **{NEW}** [National Household Survey: data table, British Columbia, all variables](housing-data-visualization-project/data/NHS2011_BC.csv) 
   - this table has the British Columbia-only aggregation of all 2,621 variables reported for the NHS.
   - these data are available for geography as fine as Dissemmination Area (the full table has 7731 rows for the province of B.C.).
   - Refer to the Statistics Canada [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm) for more information about each variable. 
+
+- [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Index-eng.cfm)
 
    - [Income and Housing](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
        - A variety of data tables are available, each summarizing different dimensions of housing and income-related data
