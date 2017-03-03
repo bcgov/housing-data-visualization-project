@@ -33,16 +33,21 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 #### Statistics Canada: Census and National Household Survey (NHS)
 
-- **{NEW}** [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to the Geosuite tool for the 2016, 2011, 2006, and 2001 Censuses. 
+- [Census of Canada: Geosuite](http://www12.statcan.gc.ca/census-recensement/2011/geo/ref/geosuite-eng.cfm). This page has links to the Geosuite tool for the 2016, 2011, 2006, and 2001 Censuses. 
 
-- **{NEW}** [Census Datasets](http://www12.statcan.gc.ca/datasets/Index-eng.cfm) This page has links to data tables for the 2016, 2011, 2006, and 2001 Censuses. It seems these tables replicate what's in the Geosuite tool above.
+- [Census Datasets](http://www12.statcan.gc.ca/datasets/Index-eng.cfm) This page has links to data tables for the 2016, 2011, 2006, and 2001 Censuses. It seems these tables replicate what's in the Geosuite tool above.
 
-- **{NEW}** [2016 Census of Canada: Population and Dwelling Count Highlight Tables](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/comprehensive.cfm) -- of greatest relevance are the Census Tract and Census Subdivision tables.
+- [2016 Census of Canada: Population and Dwelling Count Highlight Tables](http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/comprehensive.cfm) -- of greatest relevance are the Census Tract and Census Subdivision tables.
   - This report, about the population growth in the City of Toronto, has some good examples of visualizations of population change in that city's census tracts.  [Dahab Ibrahim,_Growth and Change in Toronto's Neighbourhoods_, Social Planning Toronto, February 2017](http://www.socialplanningtoronto.org/new_census_report_shows_toronto_faces_unprecedented_density_surge_leaving_city_struggling_to_keep_pace)
 
 - [2011 Census of Canada: Topic-based tabulations](http://www12.statcan.gc.ca/census-recensement/2011/dp-pd/tbt-tt/Index-eng.cfm)
 
 - [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Index-eng.cfm)
+
+- **{NEW}** [National Household Survey: data table, British Columbia, all variables](housing-data-visualization-project/data/NHS2011_BC.csv) 
+  - this table has the British Columbia-only aggregation of all 2,621 variables reported for the NHS.
+  - these data are available for geography as fine as Dissemmination Area (the full table has 7731 rows for the province of B.C.).
+  - Refer to the Statistics Canada [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm) for more information about each variable. 
 
    - [Income and Housing](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
        - A variety of data tables are available, each summarizing different dimensions of housing and income-related data
