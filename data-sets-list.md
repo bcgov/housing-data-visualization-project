@@ -44,7 +44,12 @@ The data below are by no means intended to be a comprehensive list of data that 
 
 - **{NEW}** [National Household Survey: data table, British Columbia, all variables](https://github.com/bcgov/housing-data-visualization-project/blob/master/data/NHS2011_BC.csv) 
   - this table has the British Columbia-only aggregation of all 2,621 variables reported for the NHS.
-  - these data are available for geography as fine as Dissemmination Area (the full table has 7731 rows for the province of B.C.).
+  - Refer to the Statistics Canada [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm) for more information about each variable. 
+  
+- **{NEW}** [National Household Survey: data table, British Columbia by Dissemmination Area, all variables](https://github.com/bcgov/housing-data-visualization-project/blob/master/data/NHS2011_DA_BC_all.zip)
+  - zip of csv file, 10 MB (50 MB uncompressed)
+  - the finest (smallest aread) geography available that contains the full suite of socio-demographic variables is the Dissemmination Area.
+  - the full table has 7731 rows for the province of B.C.
   - Refer to the Statistics Canada [National Household Survey Dictionary](https://www12.statcan.gc.ca/nhs-enm/2011/ref/dict/index-eng.cfm) for more information about each variable. 
 
 - [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Index-eng.cfm)
