@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Income statistics by Dissemination Area
+## Socio-demographic statistics by Dissemination Area
 
 see [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=Yes&StartRow=1&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
 
@@ -20,8 +20,9 @@ For variable names, see file NHS2011_BC.csv (in same folder). The variables list
 
 ```{r}
 library(dplyr)
-library(tidyr)
 library(readr)
+library(stringr)
+library(tidyr)
 
 
 library(ggplot2)
@@ -45,6 +46,18 @@ NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SC
 
 ```
 
+#### Filter so only Dissemination Area stats remain
+
+```{r}
+
+NHS2011data_DA <- NHS2011data %>%
+  filter(str_detect(Geography, '59'))
+
+
+```
+
+
+
 #### Income and related
 
 ```{r}
@@ -54,14 +67,14 @@ NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SC
 # decile
 # 2408: Total population by decile of adjusted after-tax family income
 
-pop_decile <- NHS2011data %>%
+pop_decile <- NHS2011data_DA %>%
   select(1:2,2408:2420)
 
 head(pop_decile)
 
 # LICO
 
-pop_inlowincome <- NHS2011data %>%
+pop_inlowincome <- NHS2011data_DA %>%
   select(1:2,2447:2491)
 
 head(pop_inlowincome)
@@ -80,7 +93,7 @@ head(pop_inlowincome)
 
 # combo
 
-pop_income_summary <- NHS2011data %>%
+pop_income_summary <- NHS2011data_DA %>%
   select(1:2,2514,2247,2248,2457) %>%
   rename(Income_Avg = `Average income $`,
          Income_Med = `Median income $`,
@@ -185,7 +198,8 @@ ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income, y = Income_Med,
 
 #### THIS DOESN'T WORK PROPERLY!
 
-There is serious double counting going on -- need to remove province, all CDs and CSDs (i.e. count only the DAs)
+Fixed the double counting but now it's falling short of the poper total. 
+
 
 ```{r}
 
