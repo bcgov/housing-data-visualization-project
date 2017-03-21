@@ -1,0 +1,125 @@
+---
+title: "CensusNHS_DA_income"
+author: "Martin Monkman"
+date: "March 20, 2017"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Income statistics by Dissemination Area
+
+see [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=Yes&StartRow=1&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
+
+
+For variable names, see file NHS2011_BC.csv (in same folder). The variables listed are shown as the row names in the main file.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+
+
+library(ggplot2)
+
+
+```
+
+
+
+read file
+
+```{r  message = FALSE}
+
+# NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv")
+
+
+NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
+                        col_types = cols(.default = "d",
+                                         Geography = "c"))
+
+
+```
+
+#### Income and related
+
+```{r}
+
+
+
+# decile
+# 2408: Total population by decile of adjusted after-tax family income
+
+pop_decile <- NHS2011data %>%
+  select(1,2408:2420)
+
+head(pop_decile)
+
+# LICO
+
+pop_inlowincome <- NHS2011data %>%
+  select(1,2447:2491)
+
+head(pop_inlowincome)
+
+```
+
+
+### summary stats
+
+
+```{r}
+
+# http://stackoverflow.com/questions/22842232/dplyr-select-column-names-containing-white-space
+# BACK TICKS!!!
+
+
+# combo
+
+pop_income_summary <- NHS2011data %>%
+  select(1,2247,2248,2457) %>%
+  rename(Income_Avg = `Average income $`,
+         Income_Med = `Median income $`,
+         Prevalance_Low_Income = `Prevalence of low income in 2010 based on after-tax low-income measure %`)
+
+
+write_csv(pop_income_summary, "pop_income_summary.csv")
+
+```
+
+
+#### some charts of the above summary
+
+```{r}
+
+# omit na from ggplot2
+# http://stackoverflow.com/questions/17216358/eliminating-nas-from-a-ggplot
+#ggplot(data=subset(iris, !is.na(Sepal.Length)), aes(x=Sepal.Length)) + 
+#geom_bar(stat="bin")
+
+
+#chart_data <- pop_income_summary %>%
+#  select(IncMed) %>%
+#  filter(IncMed != is.na())
+
+ggplot(pop_income_summary, aes(x = IncMed)) +
+  geom_histogram(bins = 25)
+
+
+ggplot(pop_income_summary, aes(x = IncAvg)) +
+  geom_histogram(bins = 25)
+
+ggplot(pop_income_summary, aes(x = PrevLowInc)) +
+  geom_histogram(bins = 25)
+
+
+ggplot(pop_income_summary, aes(x = PrevLowInc, y = IncMed)) +
+  geom_point()
+
+```
+
+
