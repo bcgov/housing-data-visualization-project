@@ -55,14 +55,14 @@ NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SC
 # 2408: Total population by decile of adjusted after-tax family income
 
 pop_decile <- NHS2011data %>%
-  select(1,2408:2420)
+  select(1:2,2408:2420)
 
 head(pop_decile)
 
 # LICO
 
 pop_inlowincome <- NHS2011data %>%
-  select(1,2447:2491)
+  select(1:2,2447:2491)
 
 head(pop_inlowincome)
 
@@ -81,7 +81,7 @@ head(pop_inlowincome)
 # combo
 
 pop_income_summary <- NHS2011data %>%
-  select(1,2247,2248,2457) %>%
+  select(1:2,2514,2247,2248,2457) %>%
   rename(Income_Avg = `Average income $`,
          Income_Med = `Median income $`,
          Prevalance_Low_Income = `Prevalence of low income in 2010 based on after-tax low-income measure %`)
@@ -106,20 +106,94 @@ write_csv(pop_income_summary, "pop_income_summary.csv")
 #  select(IncMed) %>%
 #  filter(IncMed != is.na())
 
-ggplot(pop_income_summary, aes(x = IncMed)) +
+ggplot(pop_income_summary, aes(x = Income_Med)) +
   geom_histogram(bins = 25)
 
 
-ggplot(pop_income_summary, aes(x = IncAvg)) +
+ggplot(pop_income_summary, aes(x = Income_Avg)) +
   geom_histogram(bins = 25)
 
-ggplot(pop_income_summary, aes(x = PrevLowInc)) +
+ggplot(pop_income_summary, aes(x = Prevalance_Low_Income)) +
   geom_histogram(bins = 25)
 
 
-ggplot(pop_income_summary, aes(x = PrevLowInc, y = IncMed)) +
+ggplot(pop_income_summary, aes(x = Prevalance_Low_Income, y = Income_Med)) +
   geom_point()
 
 ```
 
+
+#### Ranking and Index
+
+**Rank:** by prevalence of low income (high prevalence = high score) and median income (low income = high score.)
+
+**Index:** sum of prevalence of low income rank and median income rank.
+A low score means a combination of both _high_ prevalence and _low_ median income.
+
+
+
+```{r}
+
+pop_income_summary_02 <- pop_income_summary %>%
+  na.omit() %>%
+  mutate(Income_Med_rank = rank(desc(Income_Med)),
+         Prevalance_Low_Income_rank = rank(Prevalance_Low_Income),
+         index = (Income_Med_rank + Prevalance_Low_Income_rank))
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med_rank)) +
+  geom_point()
+
+
+
+```
+
+
+#### Define target areas
+
+Where prevalence of low income is greater than 50%, or where the median income is below 20000.
+
+```{r}
+
+pop_income_summary_02 <- pop_income_summary_02 %>%
+  mutate(target = ifelse(test = (Prevalance_Low_Income > 40 | index > 12000),
+                         yes = 1, 
+                         no = 0))
+  
+
+
+```
+
+
+#### Plot with colour to show target areas
+
+```{r}
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med_rank,
+                                  colour = target)) +
+  geom_point()
+
+
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income, y = Income_Med,
+                                  colour = target)) +
+  geom_point()
+
+
+
+```
+
+
+#### THIS DOESN'T WORK PROPERLY!
+
+There is serious double counting going on -- need to remove province, all CDs and CSDs (i.e. count only the DAs)
+
+```{r}
+
+pop_income_summary_02 %>%
+  group_by(target) %>%
+  summarise(count = n(),
+            pop = sum(`Total population in private households by citizenship`),
+            households = sum(`Total number of private households by tenure`))
+
+```
 
