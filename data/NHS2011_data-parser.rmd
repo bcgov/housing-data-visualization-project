@@ -56,9 +56,52 @@ NHS2011data_DA <- NHS2011data %>%
 
 ```
 
+---
 
+#### Housing & related
+
+ranges (columns) of interest:
+
+* mobility status  1718:1771
+
+* housing suitability  2536:2538
+* shelter costs  2539:2542/2549
+
+---
+
+#### Labour force
+
+ranges (columns) of interest:
+
+* 1988:2011
+
+* class of worker  2012:2026
+* NOC  
+
+
+---
 
 #### Income and related
+
+ranges (columns) of interest:
+
+* 2231:2383
+
+* median 2247
+* average 2248
+
+* employment income 2384:2407
+* distribution 2408:2446
+* LICO 2447-2491
+  - LICO count 2452
+  - LICO percentage 2457
+
+* deciles  2514:2520
+* total household income (distribution)  2555:2587
+  - one person households 2588:2592
+  - two+ person households 2593:2597
+
+
 
 ```{r}
 
