@@ -254,3 +254,33 @@ pop_income_summary_02 %>%
 
 ```
 
+
+
+### Add geography codes
+
+```{r}
+
+# read geog file
+
+geog_data <- read_csv("E:/github/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
+
+
+geog_data_DA <- geog_data %>%
+  distinct(DAUID, FSA, CDUID, CSDUID, CSDNAME, CSDTYPE)
+
+ls.str(geog_data_DA)
+
+# create stand alone DA number in pop_income_summary_02
+
+pop_income_summary_02$DAUID <- as.integer(str_sub(pop_income_summary_02$Geography, 1, 8))
+
+pop_income_summary_03 <- pop_income_summary_02 %>% 
+  left_join(geog_data_DA, by = "DAUID")
+
+
+write_csv(pop_income_summary_03, "pop_income_summary_03.csv")
+
+
+```
+
+
