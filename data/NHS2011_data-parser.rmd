@@ -275,7 +275,8 @@ ls.str(geog_data_DA)
 pop_income_summary_02$DAUID <- as.integer(str_sub(pop_income_summary_02$Geography, 1, 8))
 
 pop_income_summary_03 <- pop_income_summary_02 %>% 
-  left_join(geog_data_DA, by = "DAUID")
+  left_join(geog_data_DA, by = "DAUID") %>%
+  arrange(desc(index))
 
 
 write_csv(pop_income_summary_03, "pop_income_summary_03.csv")
