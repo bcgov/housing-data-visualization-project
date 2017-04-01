@@ -32,7 +32,7 @@ library(ggplot2)
 
 
 
-read file
+read source file and filter so only Dissemination Area stats remain
 
 ```{r  message = FALSE}
 
@@ -44,17 +44,13 @@ NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SC
                                          Geography = "c"))
 
 
-```
-
-#### Filter so only Dissemination Area stats remain
-
-```{r}
-
 NHS2011data_DA <- NHS2011data %>%
   filter(str_detect(Geography, '59'))
 
 
+
 ```
+
 
 ---
 
@@ -134,7 +130,7 @@ head(pop_inlowincome)
 # BACK TICKS!!!
 
 
-# combo
+# combo of average, median, and prevelance of low income
 
 pop_income_summary <- NHS2011data_DA %>%
   select(1:2,2514,2247,2248,2457) %>%
@@ -201,20 +197,20 @@ ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med
 
 
 
-```
 
 
-#### Define target areas
+# Define target areas: 
+# Where prevalence of low income is greater than 50%, or where the median income is below 20000.
 
-Where prevalence of low income is greater than 50%, or where the median income is below 20000.
-
-```{r}
 
 pop_income_summary_02 <- pop_income_summary_02 %>%
   mutate(target = ifelse(test = (Prevalance_Low_Income > 40 | index > 12000),
                          yes = 1, 
                          no = 0))
   
+# create stand alone DA number in pop_income_summary_02
+
+pop_income_summary_02$DAUID <- as.integer(str_sub(pop_income_summary_02$Geography, 1, 8))
 
 
 ```
@@ -270,9 +266,6 @@ geog_data_DA <- geog_data %>%
 
 ls.str(geog_data_DA)
 
-# create stand alone DA number in pop_income_summary_02
-
-pop_income_summary_02$DAUID <- as.integer(str_sub(pop_income_summary_02$Geography, 1, 8))
 
 pop_income_summary_03 <- pop_income_summary_02 %>% 
   left_join(geog_data_DA, by = "DAUID") %>%
