@@ -39,10 +39,13 @@ read source file and filter so only Dissemination Area stats remain
 # NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv")
 
 
-NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
+#NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
+#                        col_types = cols(.default = "d",
+#                                         Geography = "c"))
+
+NHS2011data <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
                         col_types = cols(.default = "d",
                                          Geography = "c"))
-
 
 NHS2011data_DA <- NHS2011data %>%
   filter(str_detect(Geography, '59'))
@@ -256,9 +259,10 @@ pop_income_summary_02 %>%
 
 ```{r}
 
-# read geog file
+# read geog file -- with 3 digit FSA
 
-geog_data <- read_csv("E:/github/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
+#geog_data <- read_csv("E:/github/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
+geog_data <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
 
 
 geog_data_DA <- geog_data %>%
@@ -277,4 +281,41 @@ write_csv(pop_income_summary_03, "pop_income_summary_03.csv")
 
 ```
 
+
+
+
+```{r}
+
+# read geog file -- with 6 digit postal code
+
+GCS_201702 <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/GCS_201702.csv")
+
+# test on FERNIE 
+#FERNIE <- GCS_201702 %>%
+#  filter(COMM_NAME == "FERNIE")
+#
+#FERNIE <- FERNIE %>%
+#  mutate(DAUID = as.integer(paste("59", CD_2011, DA_2011, sep = ''))) 
+#
+#ls.str(FERNIE)
+
+geog_data_2 <- GCS_201702 %>%
+  mutate(DAUID = as.integer(paste("59", CD_2011, DA_2011, sep = ''))) 
+  
+geog_data_2 <- geog_data_2 %>%
+  distinct(DAUID, POSTALCODE, CD_2011, CSD_2011, COMM_NAME)
+
+ls.str(geog_data_2)
+
+
+pop_income_summary_04 <- pop_income_summary_02 %>% 
+  left_join(geog_data_2, by = "DAUID") %>%
+  arrange(desc(index))
+
+ls.str(pop_income_summary_04)
+
+write_csv(pop_income_summary_04, "pop_income_summary_04.csv")
+
+
+```
 
