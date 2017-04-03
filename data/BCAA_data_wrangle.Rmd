@@ -1,0 +1,59 @@
+---
+title: "BCAA_data"
+author: "Martin Monkman"
+date: "April 3, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Code to summarize the BC Assessment data
+
+
+
+```{r}
+library(dplyr)
+library(readr)
+library(stringr)
+library(tidyr)
+
+
+library(ggplot2)
+
+
+```
+
+
+read source file(s) 
+
+```{r  message = FALSE}
+
+
+#BCAA2017data_Kootenay <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Kootenay Columbia.csv")
+
+BCAA2017data_Kootenay <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Kootenay Columbia.csv", 
+                        col_types = cols(PID = "c"))
+                                  
+
+ls.str(BCAA2017data_Kootenay)
+
+
+```
+
+
+(merge all 7 regions into 1? might be best to wait until it is in the SQL database and run some wrangling on the server)
+
+
+
+read geography file
+
+```{r  message = FALSE}
+
+cadastre_da_2011 <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/cadastre_da_2011.csv")
+
+ls.str(cadastre_da_2011)
+
+```
+
