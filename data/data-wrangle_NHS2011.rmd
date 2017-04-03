@@ -1,0 +1,321 @@
+---
+title: "CensusNHS_DA_income"
+author: "Martin Monkman"
+date: "March 20, 2017"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Socio-demographic statistics by Dissemination Area
+
+see [2011 National Household Survey: Data tables](http://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Lp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=0&PID=0&PRID=0&PTYPE=105277&S=0&SHOWALL=Yes&StartRow=1&SUB=0&Temporal=2013&THEME=98&VID=0&VNAMEE=&VNAMEF=)
+
+
+For variable names, see file NHS2011_BC.csv (in same folder). The variables listed are shown as the row names in the main file.
+
+```{r}
+library(dplyr)
+library(readr)
+library(stringr)
+library(tidyr)
+
+
+library(ggplot2)
+
+
+```
+
+
+
+read source file and filter so only Dissemination Area stats remain
+
+```{r  message = FALSE}
+
+# NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv")
+
+
+#NHS2011data <- read_csv("E:/github/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
+#                        col_types = cols(.default = "d",
+#                                         Geography = "c"))
+
+NHS2011data <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/R3_SCP_Can_PR_CD_CSD_DA_AllGNRs_withSUPP_BC.csv",
+                        col_types = cols(.default = "d",
+                                         Geography = "c"))
+
+NHS2011data_DA <- NHS2011data %>%
+  filter(str_detect(Geography, '59'))
+
+
+
+```
+
+
+---
+
+#### Housing & related
+
+ranges (columns) of interest:
+
+* mobility status  1718:1771
+
+* housing suitability  2536:2538
+* shelter costs  2539:2542/2549
+
+---
+
+#### Labour force
+
+ranges (columns) of interest:
+
+* 1988:2011
+
+* class of worker  2012:2026
+* NOC  
+
+
+---
+
+#### Income and related
+
+ranges (columns) of interest:
+
+* 2231:2383
+
+* median 2247
+* average 2248
+
+* employment income 2384:2407
+* distribution 2408:2446
+* LICO 2447-2491
+  - LICO count 2452
+  - LICO percentage 2457
+
+* deciles  2514:2520
+* total household income (distribution)  2555:2587
+  - one person households 2588:2592
+  - two+ person households 2593:2597
+
+
+
+```{r}
+
+
+
+# decile
+# 2408: Total population by decile of adjusted after-tax family income
+
+pop_decile <- NHS2011data_DA %>%
+  select(1:2,2408:2420)
+
+head(pop_decile)
+
+# LICO
+
+pop_inlowincome <- NHS2011data_DA %>%
+  select(1:2,2447:2491)
+
+head(pop_inlowincome)
+
+```
+
+
+### summary stats
+
+
+```{r}
+
+# http://stackoverflow.com/questions/22842232/dplyr-select-column-names-containing-white-space
+# BACK TICKS!!!
+
+
+# combo of average, median, and prevelance of low income
+
+pop_income_summary <- NHS2011data_DA %>%
+  select(1:2,2514,2247,2248,2457) %>%
+  rename(Income_Avg = `Average income $`,
+         Income_Med = `Median income $`,
+         Prevalance_Low_Income = `Prevalence of low income in 2010 based on after-tax low-income measure %`)
+
+
+write_csv(pop_income_summary, "pop_income_summary.csv")
+
+```
+
+
+#### some charts of the above summary
+
+```{r}
+
+# omit na from ggplot2
+# http://stackoverflow.com/questions/17216358/eliminating-nas-from-a-ggplot
+#ggplot(data=subset(iris, !is.na(Sepal.Length)), aes(x=Sepal.Length)) + 
+#geom_bar(stat="bin")
+
+
+#chart_data <- pop_income_summary %>%
+#  select(IncMed) %>%
+#  filter(IncMed != is.na())
+
+ggplot(pop_income_summary, aes(x = Income_Med)) +
+  geom_histogram(bins = 25)
+
+
+ggplot(pop_income_summary, aes(x = Income_Avg)) +
+  geom_histogram(bins = 25)
+
+ggplot(pop_income_summary, aes(x = Prevalance_Low_Income)) +
+  geom_histogram(bins = 25)
+
+
+ggplot(pop_income_summary, aes(x = Prevalance_Low_Income, y = Income_Med)) +
+  geom_point()
+
+```
+
+
+#### Ranking and Index
+
+**Rank:** by prevalence of low income (high prevalence = high score) and median income (low income = high score.)
+
+**Index:** sum of prevalence of low income rank and median income rank.
+A low score means a combination of both _high_ prevalence and _low_ median income.
+
+
+
+```{r}
+
+pop_income_summary_02 <- pop_income_summary %>%
+  na.omit() %>%
+  mutate(Income_Med_rank = rank(desc(Income_Med)),
+         Prevalance_Low_Income_rank = rank(Prevalance_Low_Income),
+         index = (Income_Med_rank + Prevalance_Low_Income_rank))
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med_rank)) +
+  geom_point()
+
+
+
+
+
+# Define target areas: 
+# Where prevalence of low income is greater than 50%, or where the median income is below 20000.
+
+
+pop_income_summary_02 <- pop_income_summary_02 %>%
+  mutate(target = ifelse(test = (Prevalance_Low_Income > 40 | index > 12000),
+                         yes = 1, 
+                         no = 0))
+  
+# create stand alone DA number in pop_income_summary_02
+
+pop_income_summary_02$DAUID <- as.integer(str_sub(pop_income_summary_02$Geography, 1, 8))
+
+
+```
+
+
+#### Plot with colour to show target areas
+
+```{r}
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med_rank,
+                                  colour = target)) +
+  geom_point()
+
+
+
+ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income, y = Income_Med,
+                                  colour = target)) +
+  geom_point()
+
+
+
+```
+
+
+#### THIS DOESN'T WORK PROPERLY!
+
+Fixed the double counting but now it's falling short of the poper total. 
+
+
+```{r}
+
+pop_income_summary_02 %>%
+  group_by(target) %>%
+  summarise(count = n(),
+            pop = sum(`Total population in private households by citizenship`),
+            households = sum(`Total number of private households by tenure`))
+
+```
+
+
+
+### Add geography codes
+
+```{r}
+
+# read geog file -- with 3 digit FSA
+
+#geog_data <- read_csv("E:/github/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
+geog_data <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/DB2011_all_translations_adjusted_WithCdCmaAddups.csv")
+
+
+geog_data_DA <- geog_data %>%
+  distinct(DAUID, FSA, CDUID, CSDUID, CSDNAME, CSDTYPE)
+
+ls.str(geog_data_DA)
+
+
+pop_income_summary_03 <- pop_income_summary_02 %>% 
+  left_join(geog_data_DA, by = "DAUID") %>%
+  arrange(desc(index))
+
+
+write_csv(pop_income_summary_03, "pop_income_summary_03.csv")
+
+
+```
+
+
+
+
+```{r}
+
+# read geog file -- with 6 digit postal code
+
+GCS_201702 <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/GCS_201702.csv")
+
+# test on FERNIE 
+#FERNIE <- GCS_201702 %>%
+#  filter(COMM_NAME == "FERNIE")
+#
+#FERNIE <- FERNIE %>%
+#  mutate(DAUID = as.integer(paste("59", CD_2011, DA_2011, sep = ''))) 
+#
+#ls.str(FERNIE)
+
+geog_data_2 <- GCS_201702 %>%
+  mutate(DAUID = as.integer(paste("59", CD_2011, DA_2011, sep = ''))) 
+  
+geog_data_2 <- geog_data_2 %>%
+  distinct(DAUID, POSTALCODE, CD_2011, CSD_2011, COMM_NAME)
+
+ls.str(geog_data_2)
+
+
+pop_income_summary_04 <- pop_income_summary_02 %>% 
+  left_join(geog_data_2, by = "DAUID") %>%
+  arrange(desc(index))
+
+ls.str(pop_income_summary_04)
+
+write_csv(pop_income_summary_04, "pop_income_summary_04.csv")
+
+
+```
+
