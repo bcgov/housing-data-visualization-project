@@ -207,7 +207,7 @@ ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med
 
 
 pop_income_summary_02 <- pop_income_summary_02 %>%
-  mutate(target = ifelse(test = (Prevalance_Low_Income > 40 | index > 12000),
+  mutate(target = ifelse(test = (Prevalance_Low_Income > 40 | Income_Med < 20000),
                          yes = 1, 
                          no = 0))
   
