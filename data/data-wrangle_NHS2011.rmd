@@ -203,7 +203,7 @@ ggplot(pop_income_summary_02, aes(x = Prevalance_Low_Income_rank, y = Income_Med
 
 
 # Define target areas: 
-# Where prevalence of low income is greater than 40%, or where the median income is below 20000.
+# Where prevalence of low income is greater than 40%, or where the median income is below $20,000.
 
 
 pop_income_summary_02 <- pop_income_summary_02 %>%
