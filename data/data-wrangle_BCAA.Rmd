@@ -37,6 +37,13 @@ BCAA2017data_all <- read_csv("C:/@data/GitHub/housing-data-visualization-project
                         col_types = cols(PID = "c"))
                                   
 
+setwd("C:/@data/GitHub/housing-data-visualization-project/data/BCAA")
+
+BCAA2017data_all <- read_csv("BC Stats - Housing Policy Analysis Kootenay Columbia.csv", 
+                        col_types = cols(PID = "c"))
+
+
+
 countKoot <- nrow(BCAA2017data_all)
 countall <- countKoot
 
@@ -53,7 +60,7 @@ ls.str(BCAA2017data_all)
 ```{r}
 
 
-BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Fraser Valley.csv", 
+BCAA2017data_newbit <- read_csv("BC Stats - Housing Policy Analysis Fraser Valley.csv", 
                         col_types = cols(PID = "c"))
 
 countFV <- nrow(BCAA2017data_newbit)
@@ -65,7 +72,7 @@ rm(BCAA2017data_newbit)
 
 ###
 
-BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Greater Vancouver.csv", 
+BCAA2017data_newbit <- read_csv("BC Stats - Housing Policy Analysis Greater Vancouver.csv", 
                         col_types = cols(PID = "c"))
 
 countGV <- nrow(BCAA2017data_newbit)
@@ -76,7 +83,7 @@ rm(BCAA2017data_newbit)
 
 ###
 
-BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Northern BC.csv", 
+BCAA2017data_newbit <- read_csv("BC Stats - Housing Policy Analysis Northern BC.csv", 
                         col_types = cols(PID = "c"))
 
 countNBC <- nrow(BCAA2017data_newbit)
@@ -88,7 +95,7 @@ rm(BCAA2017data_newbit)
 
 ### 
 
-BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Thompson Okanagan.csv", 
+BCAA2017data_newbit <- read_csv("BC Stats - Housing Policy Analysis Thompson Okanagan.csv", 
                         col_types = cols(PID = "c"))
                                   
 countTO <- nrow(BCAA2017data_newbit)
@@ -100,7 +107,7 @@ rm(BCAA2017data_newbit)
 
 ### 
 
-BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Vancouver Island.csv", 
+BCAA2017data_newbit <- read_csv("BC Stats - Housing Policy Analysis Vancouver Island.csv", 
                         col_types = cols(PID = "c"))
                                   
 countVI <- nrow(BCAA2017data_newbit)
@@ -109,12 +116,23 @@ countall <- countall + countVI
 BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
 rm(BCAA2017data_newbit)
 
-setwd("C:/@data/GitHub/housing-data-visualization-project/data/BCAA")
+
 write_csv(BCAA2017data_all, "BCAA2017data_all.csv")
 
 ```
 
 
+## READ THE WHOLE FILE
+
+```{r}
+
+BCAA2017data_all <- read_csv("BCAA2017data_all.csv")
+
+```
+
+
+
+## GEOGRAPHY
 
 
 read geography file
