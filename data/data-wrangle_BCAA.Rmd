@@ -33,17 +33,87 @@ read source file(s)
 
 #BCAA2017data_Kootenay <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Kootenay Columbia.csv")
 
-BCAA2017data_Kootenay <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Kootenay Columbia.csv", 
+BCAA2017data_all <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Kootenay Columbia.csv", 
                         col_types = cols(PID = "c"))
                                   
 
-ls.str(BCAA2017data_Kootenay)
+countKoot <- nrow(BCAA2017data_all)
+countall <- countKoot
+
+
+ls.str(BCAA2017data_all)
 
 
 ```
 
 
 (merge all 7 regions into 1? might be best to wait until it is in the SQL database and run some wrangling on the server)
+
+
+```{r}
+
+
+BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Fraser Valley.csv", 
+                        col_types = cols(PID = "c"))
+
+countFV <- nrow(BCAA2017data_newbit)
+countall <- countall + countFV
+                                  
+BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
+rm(BCAA2017data_newbit)
+
+
+###
+
+BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Greater Vancouver.csv", 
+                        col_types = cols(PID = "c"))
+
+countGV <- nrow(BCAA2017data_newbit)
+countall <- countall + countGV
+
+BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
+rm(BCAA2017data_newbit)
+
+###
+
+BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Northern BC.csv", 
+                        col_types = cols(PID = "c"))
+
+countNBC <- nrow(BCAA2017data_newbit)
+countall <- countall + countNBC
+
+BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
+rm(BCAA2017data_newbit)
+
+
+### 
+
+BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Thompson Okanagan.csv", 
+                        col_types = cols(PID = "c"))
+                                  
+countTO <- nrow(BCAA2017data_newbit)
+countall <- countall + countTO
+
+BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
+rm(BCAA2017data_newbit)
+
+
+### 
+
+BCAA2017data_newbit <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/BCAA/BC Stats - Housing Policy Analysis Vancouver Island.csv", 
+                        col_types = cols(PID = "c"))
+                                  
+countVI <- nrow(BCAA2017data_newbit)
+countall <- countall + countVI
+
+BCAA2017data_all <- rbind(BCAA2017data_all, BCAA2017data_newbit)
+rm(BCAA2017data_newbit)
+
+setwd("C:/@data/GitHub/housing-data-visualization-project/data/BCAA")
+write_csv(BCAA2017data_all, "BCAA2017data_all.csv")
+
+```
+
 
 
 
@@ -67,10 +137,10 @@ cadastre_da_2011_DAUID <- cadastre_da_2011 %>%
 
 ```{r}
 
-BCAA2017data_Kootenay_geog <- BCAA2017data_Kootenay %>% 
+BCAA2017data_all_geog <- BCAA2017data_all %>% 
   left_join(cadastre_da_2011_DAUID, by = "PID")
 
-ls.str(BCAA2017data_Kootenay_geog)
+ls.str(BCAA2017data_all_geog)
 
 
 ```
