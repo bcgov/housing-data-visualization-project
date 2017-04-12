@@ -132,6 +132,24 @@ BCAA2017data_all <- read_csv("BCAA2017data_all.csv")
 
 
 
+### filter and summarize
+
+```{r}
+
+BCAA2017data_all %>%
+  filter()
+
+```
+
+
+
+
+
+
+
+
+
+
 ## GEOGRAPHY
 
 
