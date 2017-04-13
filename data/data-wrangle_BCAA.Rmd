@@ -57,6 +57,7 @@ ls.str(BCAA2017data_all)
 
 (merge all 7 regions into 1? might be best to wait until it is in the SQL database and run some wrangling on the server)
 
+(too late!)
 
 ```{r}
 
@@ -123,7 +124,49 @@ write_csv(BCAA2017data_all, "BCAA/BCAA2017data_all.csv")
 ```
 
 
-## READ THE WHOLE FILE
+
+---
+
+
+
+## GEOGRAPHY (save for the db server)
+
+
+read geography file
+
+```{r  message = FALSE}
+
+cadastre_da_2011 <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/cadastre_da_2011.csv")
+
+ls.str(cadastre_da_2011)
+
+cadastre_da_2011_DAUID <- cadastre_da_2011 %>%
+  select(PID, DAUID)
+
+```
+
+The Join
+
+
+```{r}
+
+BCAA2017data_all_geog <- BCAA2017data_all %>% 
+  left_join(cadastre_da_2011_DAUID, by = "PID")
+
+ls.str(BCAA2017data_all_geog)
+
+
+```
+
+
+
+---
+
+
+## ANALYSIS
+
+
+read the file
 
 ```{r}
 
@@ -131,18 +174,23 @@ BCAA2017data_all <- read_csv("BCAA/BCAA2017data_all.csv")
 
 ls.str(BCAA2017data_all)
 
-```
-
-
-
-### filter and summarize
-
-```{r}
+### filter by residential
 
 BCAA2017_Residential <- BCAA2017data_all %>%
   filter(PROPERTY_TYPE == "Residential") 
 
 write_csv(BCAA2017_Residential, "BCAA/BCAA2017_Residential.csv")
+
+
+```
+
+
+
+ and summarize
+
+```{r}
+
+BCAA2017_Residential <- read_csv("BCAA2017_Residential.csv")
 
 BCAA2017_Residential %>%
   group_by(PRIMARY_ACTUAL_USE) %>%
@@ -180,42 +228,5 @@ table(BCAA2017_Res_SFD$bin)
 
 
 
-
-
-
-
-
-
-
-## GEOGRAPHY
-
-
-read geography file
-
-```{r  message = FALSE}
-
-cadastre_da_2011 <- read_csv("C:/@data/GitHub/housing-data-visualization-project/data/geography/cadastre_da_2011.csv")
-
-ls.str(cadastre_da_2011)
-
-cadastre_da_2011_DAUID <- cadastre_da_2011 %>%
-  select(PID, DAUID)
-
-```
-
-
-
-#### The Join
-
-
-```{r}
-
-BCAA2017data_all_geog <- BCAA2017data_all %>% 
-  left_join(cadastre_da_2011_DAUID, by = "PID")
-
-ls.str(BCAA2017data_all_geog)
-
-
-```
 
 
