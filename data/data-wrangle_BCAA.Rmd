@@ -19,9 +19,10 @@ library(readr)
 library(stringr)
 library(tidyr)
 
-
 library(ggplot2)
 
+
+options(scipen=999)
 
 ```
 
@@ -153,11 +154,27 @@ BCAA2017_Res_SFD <- BCAA2017_Residential %>%
 summary(BCAA2017_Res_SFD$ACTUAL_TOTAL)
 
 ggplot(BCAA2017_Res_SFD, aes(x=ACTUAL_TOTAL)) +
-  geom_histogram(binwidth = 50000)
+  geom_histogram(binwidth = 250000)
 
 ggplot(BCAA2017_Res_SFD, aes(x=REGIONAL_DISTRICT, y=ACTUAL_TOTAL)) +
   geom_boxplot()
 
+BCAA2017_Res_SFD %>%
+  mutate(bin = ntile(ACTUAL_TOTAL, 10)) %>%
+  group_by(bin) %>%
+  summarise(number = n(), min = min(ACTUAL_TOTAL), max = max(ACTUAL_TOTAL))
+
+
+BCAA2017_Res_SFD %>%
+  mutate(bin = ntile(ACTUAL_TOTAL, 10)) %>%
+  group_by(bin) %>%
+  summarise(number = n(), min = min(ACTUAL_TOTAL), max = max(ACTUAL_TOTAL))
+
+
+BCAA2017_Res_SFD$bin <- cut(BCAA2017_Res_SFD$ACTUAL_TOTAL, 
+                            breaks = seq(0, 100000000, by = 250000))
+
+table(BCAA2017_Res_SFD$bin)
 
 ```
 
